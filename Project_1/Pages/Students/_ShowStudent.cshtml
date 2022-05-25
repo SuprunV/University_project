@@ -1,0 +1,7 @@
+﻿@model Project_1.Pages.Party.StudentsPages
+@using Project_1.Pages.Extensions
+
+@Html.ViewerForShow(m => m.Item.FullName)
+@Html.ViewerForShow(m => m.Item.Sex, Model.GenderDescription(Model.Item.Sex))
+@Html.ViewerForShow(m => m.Item.Nationality,Model.CountryName(Model.Item.Nationality))
+@Html.ViewerForShow(m => m.Item.EnrollmentDate)

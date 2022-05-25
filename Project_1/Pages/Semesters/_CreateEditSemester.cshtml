@@ -1,0 +1,6 @@
+﻿@model Project_1.Pages.Party.SemestersPages
+@using Project_1.Pages.Extensions
+
+@Html.MyDropDownFor(m => m.Item.Season, Model.Seasons)
+@Html.EditorForInput(m => m.Item.DateStart)
+@Html.EditorForInput(m => m.Item.DateEnd)

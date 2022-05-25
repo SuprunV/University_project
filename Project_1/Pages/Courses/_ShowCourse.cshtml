@@ -1,0 +1,14 @@
+﻿@using Project_1.Pages.Extensions
+@model Project_1.Pages.Party.Courses.CoursesPages
+
+
+@Html.ViewerForShow(m => m.Item.FullString)
+@Html.ViewerForShow(m => m.Item.StudyProgramID, Model.StudyProgramName(Model.Item.StudyProgramID))
+@Html.ViewerForShow(m => m.Item.SemesterID, Model.SemesterName(Model.Item.SemesterID))
+@Html.ViewerForShow(m => m.Item.Description)
+
+Lecturers in this course:
+
+@foreach(var item in Model.lecturersOnCourse) {
+    <br/>@item
+}

@@ -1,0 +1,32 @@
+﻿
+@{
+    var pageName = (Model?.GetType()?.Name?.Replace("Pages", ""));
+    var links = new List<Dictionary<string, string>>() {
+        //{"Index", new List<string> () { "All Courses", (pageName == "Courses") ? "active" : ""} },
+        //{"MyCoursesIndex", new List<string> () { "Your own Courses", (pageName == "MyCourses") ? "active" : "" } },
+        //{"JoinedCoursesIndex", new List<string> () { "Courses you are joined ", (pageName == "JoinedCourses") ? "active" : "" } }
+    };
+    //
+    foreach (var item in Model?.AccessRights?? new Dictionary<string, Dictionary<string, List<string>>>()) {
+        var name = (item.Value.ContainsKey("name")) ? item.Value["name"][0] : item.Key;
+
+        string[] pathParts = ((item.Value["path"][0]).Split("/"));
+        var lastElem = pathParts[pathParts.Count() - 1];
+        //var handler = lastElem;
+        var handler = "Index";
+        var link = new Dictionary<string, string>() {
+            {"path", item.Value["path"][0]},
+            {"className", (item.Key == pageName) ? "active" : ""},
+            {"text", name},
+            {"handler", handler}
+        };
+        links.Add(link);
+    }
+}
+<nav> 
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+    @foreach(var link in links) {
+        <a href="@Model.getModelUrl(Model, link["path"], link["handler"], 0)" class="nav-link @link["className"]">@link["text"]</a>
+    }
+  </div>
+</nav>

@@ -1,0 +1,11 @@
+﻿@page
+@model Project_1.Pages.Party.LecturersPages
+
+@{
+    Layout = "_Edit";
+}
+<body>
+    <input type="hidden" asp-for="Item.ID"/>
+    <input type="hidden" asp-for="Item.Token" />
+    <partial name="_CreateEditLecturer"/>
+</body>

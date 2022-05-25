@@ -1,0 +1,30 @@
+﻿@{
+    var name = Model?.GetType()?.Name?.Replace("sPage",string.Empty)?? "Unspecified" ;
+    ViewData["SubTitle"] = name;
+    ViewData["Title"] = "Delete";
+    var itemID = ViewData["pageID"];
+    Layout = "_Layout";
+}
+<h1>@ViewData["Title"]</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+   
+    <hr />
+   @RenderBody()
+</div>
+<div>
+    <br/>
+    <form method="post"
+          asp-route-id="@itemID"
+          asp-route-handler="Delete"
+          asp-route-sortOrder="@Model?.CurrentOrder"
+          asp-route-pageIndex="@Model?.PageIndex"
+          asp-route-itemsNr="@Model?.PageSize"
+          asp-route-nativePage="@Model?.NativePage"
+          asp-route-currentFilter="@Model?.CurrentFilter">
+
+        <input type="submit" value="Delete" class="btn btn-danger"/> |
+        <a href="@Model.GenerateUrl(Model, null, null, true)">Back to list</a>
+    </form>
+</div>

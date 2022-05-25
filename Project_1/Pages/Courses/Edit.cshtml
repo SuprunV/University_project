@@ -1,0 +1,12 @@
+﻿@page
+@model Project_1.Pages.Party.Courses.CoursesPages
+
+@{
+    Layout = "_Edit";
+}
+<body>
+    <input type="hidden" asp-for="Item.ID"/>
+    <input type="hidden" asp-for="Item.OwnerID"/>
+    <input type="hidden" asp-for="Item.Token" />
+    <partial name="_CreateEditCourse"/>
+</body>

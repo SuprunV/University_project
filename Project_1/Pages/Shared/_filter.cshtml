@@ -1,0 +1,50 @@
+﻿@using System.Web
+
+
+@{
+    var pageName = Model?.GetType()?.Name?.Replace("Pages", string.Empty);
+    var pageLink = "";
+    var handler = "";
+    foreach (var item in Model?.AccessRights?? new Dictionary<string, Dictionary<string, List<string>>>()) {
+        if(item.Key == pageName) {
+            pageLink = item.Value["path"][0];
+            string[] pathParts = ((item.Value["path"][0]).Split("/"));
+            var lastElem = pathParts[pathParts.Count() - 1];
+            handler = lastElem;
+            break;
+        };
+
+    }
+
+    var isSelectFilter = Model?.SelectFilters?.Count > 0 ?? false;
+    var isCheckboxFilter = Model?.CheckBoxFilters?.Count > 0 ?? false;
+
+    if (string.IsNullOrEmpty(pageLink)) pageLink = "Index";
+    if (string.IsNullOrEmpty(handler)) handler = "Index";
+}
+
+<form method="get" action="@Model.GenerateUrl(Model)">
+    <input type="hidden" name="handler" value="Index" />    
+    
+    <div class="form-actions no-color">
+        <p>
+            <div class="row">
+                <div class="col-md-1">
+                    Find by name:&nbsp;
+                </div>
+                <div class="col-md-3 mr-1">
+                <input type="text" name="currentFilter" value="@Model?.CurrentFilter"/>&nbsp;
+                </div>
+                @if(isCheckboxFilter) { <partial name="_checkboxFilter"  model="@Model" /> }
+            </div>
+
+            @if (isSelectFilter) { <partial name="_selectFilter" model="@Model" />  }
+
+            Items on page:&nbsp;
+            <input type="number" id="tentacles" name="itemsNr" min="3" max="25" value="@Model?.PageSize"/>&nbsp;
+            <input type="submit" value="Search" class="btn btn-primary" />&nbsp;
+            <a href="@Model.GenerateUrl(Model, Actions.ClearPage)">Back to full list</a>
+        </p>
+    </div>
+
+</form>

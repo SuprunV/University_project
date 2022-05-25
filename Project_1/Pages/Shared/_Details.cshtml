@@ -1,0 +1,19 @@
+﻿@{
+    var name = Model?.GetType()?.Name?.Replace("sPage",string.Empty)?? "Unspecified" ;
+    ViewData["SubTitle"] = name;
+    ViewData["Title"] = "Details";
+    var itemID = ViewData["pageID"];
+    Layout = "_Layout";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div>
+
+    <hr />
+    @RenderBody()
+</div>
+<div>
+    <br/>
+    <a href="@Model.GenerateUrl(Model, null, null, true)">Back to list</a>
+</div>

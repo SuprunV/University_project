@@ -1,0 +1,28 @@
+﻿@page
+@model Project_1.Pages.Party.IndexPage
+@{
+    Layout = "_Layout";
+    //HeaderItems will contains this pages, that user with selected roll can see and interact with them
+    ViewData["Title"] = "Home page";
+    ViewData["Roll"] = Model.Roll;
+    ViewData["UserID"] = Model.UserId;
+    ViewData["SelectTitle"] = (string.IsNullOrEmpty(Model.SessionRoll)) ? "Select your roll" : 
+                              (Model.SessionRoll != "admin" && string.IsNullOrEmpty(Model.SessionUserID)) ? "Select user example" :
+                              "You can start testing system!";
+    ViewData["buttonText"] = (Model.Roll != "admin" && string.IsNullOrEmpty(Model.Roll) && Model.Users.Count() < 1) ? "Next" : "Confirm";
+}
+<div class="text-center">
+    <h1 class="display-4">Welcome to university website</h1>
+    <h2>@ViewData["SelectTitle"]</h2>
+<form method="post">
+    <div class="form-actions no-color">
+        <p>
+            &nbsp;
+            @Html.DropDownListFor(m => m.Roll, Model.Rolls)
+                @if(@Model.Users.Count() > 1) {
+                    @Html.DropDownListFor(m => m.UserId, Model.Users)
+                }
+            <input type="submit" value="@ViewData["buttonText"]" class="btn btn-primary" />&nbsp;
+        </p>
+    </div>
+</form></div>

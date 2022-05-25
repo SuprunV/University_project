@@ -1,0 +1,10 @@
+﻿@model Project_1.Pages.Party.StudentsPages
+@using Project_1.Pages.Extensions
+
+@Html.EditorForInput(m => m.Item.UniID)
+@Html.EditorForInput(m => m.Item.FirstName)
+@Html.EditorForInput(m => m.Item.LastName)
+@Html.MyDropDownFor(m => m.Item.Sex, Model.Genders)
+@Html.MyDropDownFor(m => m.Item.StudyProgramID, Model.StudyPrograms)
+@Html.MyDropDownFor(m => m.Item.Nationality, Model.Nationalities)
+@Html.EditorForInput(m => m.Item.EnrollmentDate)

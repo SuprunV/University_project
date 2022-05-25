@@ -1,0 +1,12 @@
+﻿@page
+@model Project_1.Pages.Party.StudyProgramsPages
+
+
+@{
+    Layout = "_Edit";
+}
+<body>
+    <input type="hidden" asp-for="Item.Token" />
+    <input type="hidden" asp-for="Item.ID"/>
+    <partial name="_CreateEditStudyProgram"/>
+</body>

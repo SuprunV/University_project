@@ -1,0 +1,14 @@
+﻿
+@page
+@using Project_1.Pages.Extensions
+@model Project_1.Pages.Party.StudentsPages
+
+@{
+    Layout = "_Index";
+    ViewData["Title"] ="Students list";
+}
+
+<body>
+    @Html.ShowTable(Model.Items)
+</body>
+

@@ -1,0 +1,52 @@
+﻿@page
+@using Project_1.Pages.Extensions
+@model Project_1.Pages.Connection.Enrollments.ChooseCoursesPages
+
+@{
+    var name = Model?.GetType()?.Name?.Replace("Pages",string.Empty)?? "Unspecified" ;
+    ViewData["Title"] = "Details";
+    Layout = "Shared/_Layout";
+    ViewData["pageID"] = Model!.Item.ID;
+    ViewData["btnText"] = Model.StudentIsInCourse ? "Leave course" : "Join Course";
+    ViewData["btnClass"] = Model.StudentIsInCourse ? "btn-danger" : "btn-primary";
+    var isStudent = Model?.SessionRoll == "student";
+    var isLecturers = (Model?.Lecturers?.Count() ?? 0) > 0;
+    var isLecturer = Model?.SessionRoll == "lecturer";
+
+
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div>
+    <hr/>
+    <partial name="_ShowEnrollment"/>
+    @if(isStudent && isLecturers) {
+        <form method="post" asp-page-handler="Details"
+              asp-route-id="@Model?.Item.ID"
+              asp-route-sortOrder="@Model?.CurrentOrder"
+              asp-route-pageIndex="@Model?.PageIndex"
+              asp-route-currentFilter="@Model?.CurrentFilter"
+              asp-route-itemsNr="@Model?.PageSize">
+            @if (Model!.StudentIsInCourse) {
+                @Html.ViewerForShow(m => m.Item.LecturerName)
+            }
+            else {
+                @Html.MyDropDownFor(m => m.Item.LecturerID, Model.Lecturers! )
+            }
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <input type="submit" value="@ViewData["btnText"]" class="btn @ViewData["btnClass"]"/>
+                &nbsp;
+                <a href="@Model.GenerateUrl(Model, null, null, true)">Back to list</a>
+            </div>
+        </form>
+    } else if(!isLecturer) {
+
+       <p>Until there are not any lecturer. Please, wait, at least one lecturer need to join this course.</p>
+       <a href="@Model?.GenerateUrl(Model, null, null, true)">Back to list</a>
+    } else {
+        <a href="@Model?.GenerateUrl(Model, null, null, true)">Back to list</a>
+    }
+
+</div>

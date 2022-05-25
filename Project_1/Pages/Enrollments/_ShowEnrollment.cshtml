@@ -1,0 +1,7 @@
+﻿@using Project_1.Pages.Extensions
+@model Project_1.Pages.Connection.Enrollments.ChooseCoursesPages
+
+@Html.ViewerForShow(m => m.Item.FullString)
+@Html.ViewerForShow(m => m.Item.StudyProgramID, Model.StudyProgramName(Model.Item.StudyProgramID))
+@Html.ViewerForShow(m => m.Item.SemesterID, Model.SemesterName(Model.Item.SemesterID))
+@Html.ViewerForShow(m => m.Item.Description)

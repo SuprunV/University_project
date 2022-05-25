@@ -1,0 +1,24 @@
+﻿@page
+@using Project_1.Pages.Extensions
+@model Project_1.Pages.Connection.Enrollments.EnrollmentsPages
+@using Project_1.Pages.Extensions
+
+
+@{
+    Layout = "_Edit";
+}
+<body>
+    @Html.ViewerForShow(m => m.Item.StudentID, Model.StudentName(Model.Item.StudentID))
+    @Html.ViewerForShow(m => m.Item.SemesterID, Model.SemesterName(Model.Item.SemesterID))
+    @Html.ViewerForShow(m => m.Item.CourseID, Model.CourseName(Model.Item.CourseID))
+    
+    <input type="hidden" asp-for="Item.ID"/>
+    <input type="hidden" asp-for="Item.StudentID"/>
+    <input type="hidden" asp-for="Item.CourseID"/>
+    <input type="hidden" asp-for="Item.Token" />
+    <input type="hidden" asp-for="Item.DegreeTakerID"/>
+    <input type="hidden" asp-for="Item.SemesterID"/>
+    
+    @Html.EditorForInput(m => m.Item.Grade)
+
+</body>

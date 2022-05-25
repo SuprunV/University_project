@@ -1,0 +1,16 @@
+﻿@page
+@model Project_1.Pages.Connection.Enrollments.ChooseCoursesPages
+@using Project_1.Pages.Extensions
+
+@{
+    Layout = "_Index";
+    ViewData["Title"] = "All courses list";
+}
+<body>
+<partial name="_Tabs" />
+<div class="tab-content">
+    <div class="tab-pane fade show active">
+        @Html.ShowTable(Model.Items)
+    </div>
+</div>
+</body>

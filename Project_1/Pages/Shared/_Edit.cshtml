@@ -1,0 +1,30 @@
+﻿@{  
+    var name = Model?.GetType()?.Name?.Replace("sPage",string.Empty)?? "Unspecified" ;
+    ViewData["SubTitle"] = name;
+    ViewData["Title"] = "Edit";
+    Layout = "_Layout";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+
+<hr />
+<form method="post" asp-page-handler="Edit"
+      asp-route-sortOrder="@Model?.CurrentOrder"
+      asp-route-pageIndex="@Model?.PageIndex"
+      asp-route-currentFilter="@Model?.CurrentFilter"        
+      asp-route-nativePage="@Model?.NativePage"
+      asp-route-itemsNr="@Model?.PageSize">
+
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    @RenderBody()
+    <div class="form-group">
+        <input type="submit" value="Save" class="btn btn-primary"/>
+        &nbsp;
+        <a href="@Model.GenerateUrl(Model, null, null, true)">Back to list</a>
+    </div>
+</form>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

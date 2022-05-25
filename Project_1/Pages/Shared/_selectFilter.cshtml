@@ -1,0 +1,21 @@
+﻿<div class="row">
+    @foreach(var select in Model.SelectFilters) {
+        var selectValue = Model.GetSelectValue(select.Key);
+        <div class="col-md-1">
+            @Model.DisplayName(select.Key)
+        </div>
+    <div class="col-md-3 mr-1">
+        <select name="@select.Key" class="form-control col-auto" value="@selectValue">
+            <option value="">Select</option>
+            @foreach(var option in select.Value) {
+                @if(option.Value == selectValue) {
+                    <option value="@option.Value" selected>@option.Text</option>
+                } else {
+                    <option value="@option.Value">@option.Text</option>
+                }
+            }
+        </select>
+    </div>
+    }
+</div>
+

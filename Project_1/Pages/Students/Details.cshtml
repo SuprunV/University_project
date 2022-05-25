@@ -1,0 +1,11 @@
+﻿@page
+@model Project_1.Pages.Party.StudentsPages
+
+@{
+    ViewData["pageID"] = Model.Item.ID;
+    Layout = "_Details";
+}
+
+<body>
+<partial name="_ShowStudent"/>
+</body>

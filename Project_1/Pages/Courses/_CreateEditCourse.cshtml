@@ -1,0 +1,8 @@
+﻿@model Project_1.Pages.Party.Courses.CoursesPages
+@using Project_1.Pages.Extensions
+
+@Html.MyDropDownFor(m => m.Item.SemesterID, Model.Semesters)
+@Html.EditorForInput(m => m.Item.CourseTitle)
+@Html.EditorForInput(m => m.Item.EAP)
+@Html.EditorForInput(m => m.Item.Description)
+@Html.MyDropDownFor(m => m.Item.StudyProgramID, Model.allStudyPrograms)

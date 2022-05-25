@@ -1,0 +1,53 @@
+﻿@{
+    var name = Model?.GetType()?.Name?.Replace("Pages",string.Empty)?? "Unspecified";
+    //var firstDisabled = 0;
+    //var nextDisabled = 0; 
+    //var prevDisabled = 0;
+    //var lastDisabled = 0;
+    var firstDisabled = (Model?.PageIndex != 0)? "": "disabled";
+    var nextDisabled = (Model?.HasNextPage) ? "": "disabled";
+    var prevDisabled = (Model?.HasPreviousPage)? "": "disabled";
+    var lastDisabled = (Model?.PageIndex != Model?.TotalPages-1 && Model?.TotalPages != 0)? "": "disabled";
+
+    bool avaibleCreate = Model?.AccessRights[name]["actions"]?.Contains("Create") ?? false;
+    var showMessage = $"Page {Model?.PageIndex +1} of total pages {Model?.TotalPages}";
+
+    bool isItems = Model.Items.Count > 0;
+    Layout = "_Layout";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+@if(avaibleCreate) {
+    <p> 
+        <a asp-page="Create" 
+        asp-page-handler="Create"
+        asp-route-sortOrder="@Model?.CurrentOrder"
+        asp-route-pageIndex="@Model?.PageIndex"
+        asp-route-currentFilter="@Model?.CurrentFilter"
+        asp-route-itemsNr="@Model?.PageSize"
+        asp-route-nativePage="@Model?.getNativePageName()"
+        >Create new</a> 
+    </p>    
+}
+
+<partial name="_filter" model="@Model" /> 
+
+@RenderBody()
+
+<div>
+<a href="@Model.GenerateUrl(Model, Actions.First )" class="btn btn-primary @firstDisabled">
+    First
+</a>&nbsp;
+<a href="@Model.GenerateUrl(Model, Actions.Prev )" class="btn btn-primary @prevDisabled">
+   Previous
+</a>&nbsp;
+   @showMessage
+   &nbsp;
+<a href="@Model.GenerateUrl(Model, Actions.Next )" class="btn btn-primary @nextDisabled">
+   Next
+</a>&nbsp; 
+<a href="@Model.GenerateUrl(Model, Actions.Last )" class="btn btn-primary @lastDisabled">
+   Last
+</a>&nbsp;
+</div>

@@ -1,0 +1,12 @@
+﻿@page
+@model Project_1.Pages.Party.Courses.CoursesPages
+@using Project_1.Pages.Extensions
+
+@{
+    Layout = "_Create";
+}
+<body>
+   @* @Html.EditorForInput(m => m.Item.ID)*@
+    <input value="@Model.SessionUserID" type="hidden" asp-for="Item.OwnerID"/>
+    <partial name="_CreateEditCourse" />
+</body>
