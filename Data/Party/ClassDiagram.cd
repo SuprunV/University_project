@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Project_1.Data.Party.CourseData">
+    <Position X="2" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQIAAgAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Party\CourseData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Project_1.Data.Party.LecturerData">
+    <Position X="6.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAABAAAAAAAABAAAAAAAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>Party\LecturerData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Project_1.Data.Party.SemesterData">
+    <Position X="11" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAACAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Party\SemesterData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Project_1.Data.Party.StudentData">
+    <Position X="4.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAABAAAAAAAABQAAAAAAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>Party\StudentData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Project_1.Data.Party.StudyProgramData">
+    <Position X="8.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAA=</HashCode>
+      <FileName>Party\StudyProgramData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Project_1.Data.EntityData" Collapsed="true">
+    <Position X="6.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>EntityData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
