@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Project_1.Tests.Aids.TypesTests" Collapsed="true">
+    <Position X="111" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAAQAAAADQgABEAgAFAAAAAAALAAAAACA=</HashCode>
+      <FileName>Aids\TypesTests.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Project_1.Tests.Facade.ViewFactoryTests&lt;TFactory, TView, TObj, TData&gt;" Collapsed="true">
+    <Position X="105" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAEAAAAAAAAQAACAAAEAIAAAAAAAAAA=</HashCode>
+      <FileName>Facade\ViewFactoryTests.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Project_1.Tests.Infra.Initializers.SemesterCoursesInitializerTests" Collapsed="true">
+    <Position X="106.75" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAA=</HashCode>
+      <FileName>Infra\Initializers\StudentInitializerTests.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Project_1.Tests.Infra.SealedRepoTests&lt;TClass, TBaseClass, TDomain, TData&gt;" Collapsed="true">
+    <Position X="110" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAgAAAEAAAAAAAAAQAAAAAABAAAAIAAgAAAAAEQAA=</HashCode>
+      <FileName>Infra\SealedRepoTests.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Project_1.Tests.Project1.PagesTests" Collapsed="true">
+    <Position X="104.75" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Project1\IndexPagesTests.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Project_1.Tests.Project1.IndexPagesTests" Collapsed="true">
+    <Position X="102.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Project1\IndexPagesTests.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Project_1.Tests.AbstractClassTests&lt;TClass, TBaseClass&gt;" Collapsed="true">
+    <Position X="105.5" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AbstractClassTests.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Project_1.Tests.AssemblyTests" Collapsed="true">
+    <Position X="110" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gABIAcgIAAECAFCgGAQBwCAAAIApAQAwAAAEIIAgCAA=</HashCode>
+      <FileName>AssemblyTests.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Project_1.Tests.BaseTests&lt;TClass, TBaseClass&gt;" Collapsed="true">
+    <Position X="110" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIABAAAAABIAABAACAABABAAAAIAESAAQIAgAAACA=</HashCode>
+      <FileName>BaseTests.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Project_1.Tests.HostTests" Collapsed="true">
+    <Position X="105.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAAAAACAQKAAAAAAAAAQAAgABAAAAAI=</HashCode>
+      <FileName>HostTests.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Project_1.Tests.SealedClassTests&lt;TClass, TBaseClass&gt;" Collapsed="true">
+    <Position X="107.25" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAA=</HashCode>
+      <FileName>SealedClassTests.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Project_1.Tests.SealedBaseTests&lt;TClass, TBaseClass&gt;" Collapsed="true">
+    <Position X="110" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAAACAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SealedClassTests.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Project_1.Tests.TestAsserts" Collapsed="true">
+    <Position X="108" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAABQAAAMAAAAABAACAAAAQAAAACAAAAAA=</HashCode>
+      <FileName>TestAsserts.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Project_1.Tests.TestHost&lt;TProgram&gt;" Collapsed="true">
+    <Position X="110.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAAIAAAAAAAEAAAAAAAAAAAAEAAAAAAA=</HashCode>
+      <FileName>TestHost.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Project_1.Tests.TypeTests" Collapsed="true">
+    <Position X="107.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gABIAkgAAAAIABCAiAAA0AAQAYApAwCABAEEAAAgAAA=</HashCode>
+      <FileName>TypeTests.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
